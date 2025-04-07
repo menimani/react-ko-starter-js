@@ -16,7 +16,10 @@ npm install
 npm run dev
 ```
 
-[`App.tsx`](./src/App.tsx) を開いて編集すれば、すぐに Knockout のバインディングが React の中で動作します。
+[`App.tsx`](./src/App.jsx) を開いて編集すれば、すぐに Knockout のバインディングが React の中で動作します。
+
+TS用テンプレートについては下記を参照してください。  
+[react-ko-starter-ts](https://github.com/menimani/react-ko-starter-ts)
 
 ---
 

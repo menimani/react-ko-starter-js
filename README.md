@@ -14,8 +14,11 @@ npm install
 npm run dev
 ```
 
-Then open [`App.tsx`](./src/App.tsx) and edit freely.  
+Then open [`App.tsx`](./src/App.jsx) and edit freely.  
 Knockout bindings will work instantly inside your React components!
+
+For the TypeScript version, check out:  
+[react-ko-starter-ts](https://github.com/menimani/react-ko-starter-ts)
 
 ---
 
