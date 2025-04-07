@@ -1,12 +1,90 @@
-# React + Vite
+# react-ko-starter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+en English | [ja 日本語](./README.ja.md)
 
-Currently, two official plugins are available:
+This is the **official starter template** for [react-ko](https://github.com/menimani/react-ko),  
+a minimalist bridge between **React** and **Knockout.js**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Quick Start
 
-## Expanding the ESLint configuration
+```bash
+npx degit menimani/react-ko-starter-js my-app
+cd my-app
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Then open [`App.tsx`](./src/App.tsx) and edit freely.  
+Knockout bindings will work instantly inside your React components!
+
+---
+
+## 📦 What's included
+
+- ✅ React + TypeScript + Vite (official template)
+- ✅ [Knockout.js](https://knockoutjs.com/) installed
+- ✅ [react-ko](https://github.com/menimani/react-ko) installed
+- ✅ No extra setup or configuration — just `npm install` and go
+
+---
+
+## 💡 What is `react-ko`?
+
+> `react-ko` allows you to write Knockout bindings (`data-bind`) inside your React JSX,  
+> using your existing KO ViewModels directly.
+
+- Use `ko.observable`, `computed`, `observableArray`, etc. as usual
+- Apply KO bindings in React DOM with `data-bind`
+- Use `<KoScope viewModel={vm}>...</KoScope>` to bind a viewModel to any component subtree
+- Or use `<RootKnockoutProvider viewModel={vm}>` for global bindings
+
+---
+
+## 🧪 Sample Code
+
+```tsx
+import { KoScope } from 'react-ko'
+import ko from 'knockout'
+
+class ViewModel {
+  count = ko.observable(0)
+  increment = () => this.count(this.count() + 1)
+}
+
+const vm = new ViewModel()
+
+export default function App() {
+  return (
+    <KoScope viewModel={vm}>
+      <button data-bind="click: increment">
+        count is <span data-bind="text: count"></span>
+      </button>
+    </KoScope>
+  )
+}
+```
+
+---
+
+## 🔍 Next Steps
+
+- Add more `observable` fields
+- Try `computed` or `observableArray`
+- Move the ViewModel to a separate file
+- Explore `react-ko` docs for [KoIf / KoForeach / KoScope](https://github.com/menimani/react-ko)
+
+---
+
+## 🧠 Why use this?
+
+Because:
+- Knockout is simple, reactive, and proven
+- React is great for component composition
+- You get **KO's reactivity** with **React's structure**, no boilerplate
+- Sometimes `useState` and `useEffect` are just not worth it
+
+---
+
+## 🛠️ License
+
+MIT
