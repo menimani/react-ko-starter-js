@@ -10,8 +10,8 @@
 ## 🚀 クイックスタート
 
 ```bash
-npx degit menimani/react-ko-starter-js my-app
-cd my-app
+npx degit menimani/react-ko-starter-js my-app-js
+cd my-app-js
 npm install
 npm run dev
 ```
